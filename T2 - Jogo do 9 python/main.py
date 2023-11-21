@@ -184,7 +184,7 @@ def comparar_algoritmos(resultados):
 
     # Exibir a análise
     df_analise = pd.DataFrame(analise)
-    print(df_analise)
+    print('\nComparação de algoritmos:\n', df_analise)
 
 # Definição de matrizes iniciais e finais
 initialMatrices = [
@@ -242,10 +242,10 @@ for i, initialMatrix in enumerate(initialMatrices):
     executa_greedy = solveGreedyBestFirst(initialMatrix, finalMatrix, x, y, count_greedy)
     executa_astar = solveAStar(initialMatrix, finalMatrix, x, y, count_astar)
 
-    count_bfs = executa_bfs[2]
-    count_dfs = executa_dfs[2]
-    count_greedy = executa_greedy[2]
-    count_astar = executa_astar[2]
+    count_bfs = executa_bfs[1]
+    count_dfs = executa_dfs[1]
+    count_greedy = executa_greedy[1]
+    count_astar = executa_astar[1]
 
     # Armazena os resultados
     resultados["Tabuleiro"].append(f"Tabuleiro {i + 1}")
@@ -275,4 +275,4 @@ print(df)
 comparar_algoritmos(resultados)
 
 df_analise = pd.DataFrame(tempos_execucao)
-print(df_analise)
+print('/nTempo Execução:\n', df_analise)
